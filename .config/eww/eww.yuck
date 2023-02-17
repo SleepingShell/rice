@@ -1,0 +1,57 @@
+(defpoll timeVar :interval "5s" `date +%H:%M`)
+
+(defwindow center
+  :monitor 0
+  :stacking "bg"
+  :exclusive true
+  :focusable false
+  :windowtype "dock"
+  :geometry (geometry
+                      :x "0px" :y "4px"
+                      :width "100px"
+                      :height "0px"
+                      :anchor "top center")
+  (main)
+)
+
+(defwindow powermenu
+  :monitor 0
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  :windowtype "dialog"
+  :geometry (geometry
+                      :x "0px" :y "2px"
+                      :width "100px"
+                      :height "10px"
+                      :anchor "center")
+  (powermenu_layout)
+)
+
+(defwidget main []
+  (label :class "label-time" :text timeVar
+  )
+)
+
+(defwidget powermenu_layout []
+  (box :class "layout-box" :space-evenly false :orientation "vertical"
+       :style "background-image: url('./wallpaper')"
+      (_buttons :shutdown "poweroff" :reboot "reboot"
+                :logout "loginctl kill-session self"
+                :shutdown_icon "⏻" :reboot_icon ""
+                :logout_icon ""
+      )
+  )
+)
+
+(defwidget _buttons [shutdown shutdown_icon reboot
+                    reboot_icon logout logout_icon]
+  (box :class "btns-box" :spacing 5
+       :vexpand true :hexpand true
+       :valign "end" :halign "end"
+       :space-evenly false
+    (button :onclick shutdown shutdown_icon)
+    (button :onclick reboot reboot_icon)
+    (button :onclick logout logout_icon)
+  )
+)
