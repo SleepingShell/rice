@@ -1,4 +1,7 @@
 (defpoll timeVar :interval "5s" `date +%H:%M`)
+(defpoll calendar_day :interval "1h" "date '+%d'")
+(defpoll calendar_month :interval "1h" "scripts/calendar")
+(defpoll calendar_year :interval "1h" "date '+%Y'")
 
 (defwindow center
   :monitor 0
@@ -28,8 +31,35 @@
   (powermenu_layout)
 )
 
+(defwindow calendar
+  :monitor 0
+  :geometry (geometry
+                      :x "47%" :y "3%"
+                      :width "270px"
+                      :height "60px"
+            )
+  (cal)
+)
+
+
 (defwidget main []
-  (label :class "label-time" :text timeVar
+  ;;(label :class "label-time" :text timeVar
+  ;;)
+  (box :class "button-time-box" :orientation "h" :halign "center"
+    (button :onclick "scripts/popup_cal" timeVar)
+  )
+)
+
+(defwidget cal []
+  (box :class "cal-box"
+        :orientation "v"
+    (box :class "cal-inner-box"
+      (calendar :class "cal"
+                  :day calendar_day
+                  :month calendar_month
+                  :year calendar_year
+      )
+    )
   )
 )
 

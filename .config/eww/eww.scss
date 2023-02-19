@@ -66,9 +66,26 @@ $surface-red: #f87070;
   font-family: "Poiret One";
 }
 
-.label-time {
+.button-time-box {
+  button {
+    font-size: large;
+    font-weight: bold;
+    
+    &:hover {
+      transition: 200ms linear background-color, border-radius;
+      background-color: rgba($surface-lightgrey, 0.6);
+    }
+  }
+}
+
+.button-time {
   font-size: large;
   font-weight: bold;
+}
+
+.cal-box {
+  background-color: $surface-lightgrey;
+  border-radius: 0.5em;
 }
 
 // vim:ft=scss
