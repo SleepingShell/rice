@@ -24,5 +24,7 @@ alias kdns='k run dnstest --image=tutum/dnsutils -- sleep 3600'
 export PATH=$PATH:~/.cargo/bin
 export PATH="$PATH:/home/tyler/.foundry/bin"
 
+
+
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(starship init zsh)"

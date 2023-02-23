@@ -1,6 +1,6 @@
 (defpoll timeVar :interval "5s" `date +%H:%M`)
 (defpoll calendar_day :interval "1h" "date '+%d'")
-(defpoll calendar_month :interval "1h" "scripts/calendar")
+(defpoll calendar_month :interval "1h" "date '+%m'")
 (defpoll calendar_year :interval "1h" "date '+%Y'")
 
 (defwindow center

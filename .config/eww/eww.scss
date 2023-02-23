@@ -86,6 +86,15 @@ $surface-red: #f87070;
 .cal-box {
   background-color: $surface-lightgrey;
   border-radius: 0.5em;
+
+  .cal-inner-box {
+    .cal {
+      &.highlight {
+        padding: 10rem;
+        //background-color: #f87070;
+      }
+    }
+  }
 }
 
 // vim:ft=scss
