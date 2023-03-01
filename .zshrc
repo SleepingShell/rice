@@ -20,6 +20,7 @@ alias k='kubectl'
 alias kbug='kubectl run --generator=run-pod/v1 -i --tty bug --image=alpine -- sh'
 alias kdns='k run dnstest --image=tutum/dnsutils -- sleep 3600'
 
+alias ls='ls --color=auto'
 # Path
 export PATH=$PATH:~/.cargo/bin
 export PATH="$PATH:/home/tyler/.foundry/bin"
@@ -28,3 +29,4 @@ export PATH="$PATH:/home/tyler/.foundry/bin"
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(starship init zsh)"
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
