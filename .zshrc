@@ -21,12 +21,39 @@ alias kbug='kubectl run --generator=run-pod/v1 -i --tty bug --image=alpine -- sh
 alias kdns='k run dnstest --image=tutum/dnsutils -- sleep 3600'
 
 alias ls='ls --color=auto'
+
+
 # Path
 export PATH=$PATH:~/.cargo/bin
 export PATH="$PATH:/home/tyler/.foundry/bin"
-
-
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:$HOME/.nargo/bin
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(starship init zsh)"
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+# NVM
+autoload -U add-zsh-hook
+
+load-nvmrc() {
+  local nvmrc_path
+  nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version
+    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
