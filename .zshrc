@@ -14,6 +14,8 @@ promptinit
 # Config
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+export EDITOR=vim
+
 # Applications
 source /usr/share/nvm/init-nvm.sh
 alias k='kubectl'
@@ -32,6 +34,8 @@ export PATH=$PATH:$HOME/.nargo/bin
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(starship init zsh)"
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+eval "$(direnv hook zsh)"
+
 
 # NVM
 autoload -U add-zsh-hook
@@ -57,3 +61,5 @@ load-nvmrc() {
 
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+export PATH="$PATH:/home/tyler/.huff/bin"
