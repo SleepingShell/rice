@@ -30,10 +30,12 @@ export PATH=$PATH:~/.cargo/bin
 export PATH="$PATH:/home/tyler/.foundry/bin"
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:$HOME/.nargo/bin
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(starship init zsh)"
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+source <(talosctl completion zsh)
 eval "$(direnv hook zsh)"
 
 
@@ -63,3 +65,11 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 export PATH="$PATH:/home/tyler/.huff/bin"
+
+# pnpm
+export PNPM_HOME="/home/tyler/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
