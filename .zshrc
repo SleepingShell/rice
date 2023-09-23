@@ -23,7 +23,7 @@ alias kbug='kubectl run --generator=run-pod/v1 -i --tty bug --image=alpine -- sh
 alias kdns='k run dnstest --image=tutum/dnsutils -- sleep 3600'
 
 alias ls='ls --color=auto'
-
+alias ydl='yt-dlp -f ba -x'
 
 # Path
 export PATH=$PATH:~/.cargo/bin
