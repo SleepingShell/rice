@@ -1,0 +1,28 @@
+{
+    "workbench.colorTheme": "GitHub Dark Default",
+    "editor.tabSize": 2,
+    "editor.fontFamily": "'FiraCode Nerd Font', 'monospace', monospace",
+    "todo-tree.regex.regex": "(|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
+    "git.confirmSync": false,
+    "solidity-va.codelens.drawio.enable": false,
+    "solidity-va.outline.decorations": false,
+    "solidity-va.deco.statevars": false,
+    "rust-analyzer.inlayHints.maxLength": 10,
+    "rust-analyzer.rustfmt.extraArgs": ["+nightly"],
+    "rust-analyzer.check.overrideCommand": [
+        "cargo",
+        "+nightly",
+        "clippy",
+        "--all",
+        "--all-features",
+        "--message-format=json"
+      ],
+
+    "[rust]" : {
+        "editor.tabSize": 4,
+        "editor.formatOnSave": true
+    },
+    "explorer.confirmDragAndDrop": false,
+    "redhat.telemetry.enabled": false,
+    "diffEditor.codeLens": true
+}
