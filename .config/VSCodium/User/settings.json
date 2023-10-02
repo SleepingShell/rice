@@ -22,6 +22,10 @@
         "editor.tabSize": 4,
         "editor.formatOnSave": true
     },
+    "[huff]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    },
     "explorer.confirmDragAndDrop": false,
     "redhat.telemetry.enabled": false,
     "diffEditor.codeLens": true
