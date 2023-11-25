@@ -1,0 +1,20 @@
+# converted by firecfg
+[Desktop Entry]
+Name=VSCodium
+Comment=Code Editing. Redefined.
+GenericName=Text Editor
+Exec=codium --no-sandbox --unity-launch --ozone-platform=wayland --enable-features=WaylandWindowDecorations %F
+Icon=vscodium
+Type=Application
+StartupNotify=true
+StartupWMClass=VSCodium
+Categories=Utility;Development;IDE;
+MimeType=text/plain;inode/directory;
+Actions=new-empty-window;
+Keywords=vscode;
+
+[Desktop Action new-empty-window]
+Name=New Empty Window
+Exec=codium --no-sandbox --new-window %F
+Icon=vscodium
+

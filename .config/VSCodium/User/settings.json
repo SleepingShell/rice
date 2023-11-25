@@ -1,5 +1,6 @@
 {
-    "workbench.colorTheme": "GitHub Dark Default",
+    "window.titleBarStyle": "custom",
+    "workbench.colorTheme": "GitHub Light",
     "editor.tabSize": 2,
     "editor.fontFamily": "'FiraCode Nerd Font', 'monospace', monospace",
     "todo-tree.regex.regex": "(|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
@@ -26,7 +27,29 @@
         "editor.tabSize": 4,
         "editor.insertSpaces": true
     },
+    "[noir]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    },
     "explorer.confirmDragAndDrop": false,
     "redhat.telemetry.enabled": false,
-    "diffEditor.codeLens": true
+    "diffEditor.codeLens": true,
+    "todo-tree.highlights.useColourScheme": true,
+    "python.analysis.extraPaths": [
+        "./scripts",
+        "/home/tyler/.vscode-oss/extensions/continue.continue-0.6.5-linux-x64"
+    ],
+    "python.autoComplete.extraPaths": [
+        "/home/tyler/.vscode-oss/extensions/continue.continue-0.0.413-linux-x64",
+        "/home/tyler/.vscode-oss/extensions/continue.continue-0.1.40-linux-x64",
+        "/home/tyler/.vscode-oss/extensions/continue.continue-0.1.41-linux-x64",
+        "/home/tyler/.vscode-oss/extensions/continue.continue-0.2.0-linux-x64",
+        "/home/tyler/.vscode-oss/extensions/continue.continue-0.5.0-linux-x64",
+        "/home/tyler/.vscode-oss/extensions/continue.continue-0.6.0-linux-x64",
+        "/home/tyler/.vscode-oss/extensions/continue.continue-0.6.3-linux-x64",
+        "/home/tyler/.vscode-oss/extensions/continue.continue-0.6.4-linux-x64",
+        "/home/tyler/.vscode-oss/extensions/continue.continue-0.6.5-linux-x64"
+    ],
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "workbench.sideBar.location": "right"
 }
